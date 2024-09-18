@@ -1,0 +1,51 @@
+import {StyleSheet} from "react-native";
+
+
+export const InvoicesListStyles = StyleSheet.create({
+    screenContainer: {
+        flex: 1,
+        position: "relative",
+        backgroundColor: "#E9EBEC",
+    },
+    cardsWrapper: {
+        padding: 5,
+        flexDirection: "row",
+        flexWrap: "wrap",
+        alignItems: "center",
+    },
+    scrollBtn: {
+        position: "absolute",
+        bottom: 15,
+        right: 15,
+        zIndex: 3,
+        width: 50,
+        height: 50,
+        borderRadius: 30,
+        alignItems: "center",
+        justifyContent: "center",
+        backgroundColor: "#0695e7",
+        shadowOffset: {width: 1, height: 2},
+        shadowOpacity: 0.4,
+        shadowRadius: 10,
+        elevation: 20,
+        shadowColor: "#006ca8",
+    },
+    mapBtn: {
+        position: "absolute",
+        display: "flex",
+        flexDirection: "row",
+        bottom: 15,
+        left: 15,
+        width: 50,
+        height: 50,
+        borderRadius: 30,
+        alignItems: "center",
+        justifyContent: "center",
+        backgroundColor: "#ffffff",
+        shadowOffset: {width: 1, height: 2},
+        shadowOpacity: 0.4,
+        shadowRadius: 10,
+        elevation: 20,
+        shadowColor: "#000000",
+    },
+});

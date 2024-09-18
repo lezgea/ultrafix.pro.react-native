@@ -1,0 +1,22 @@
+export default {
+    app_id: 605,
+    mainBgColor: "#F6F6F6",
+    mainTextColor: "white",
+    lightTextColor: "#9E9E9E",
+    mainTextSize: 26,
+    secondaryTextColor: '#c9c9c9',
+    onFocusBorderColor: '#eb4d4b',
+    accentColor: '#2196f3',
+    secondaryTextSize: 16,
+    inputMargin: 6,
+    screenPadding: 15,
+    internetError: 'Internet Error',
+    lightDividerColor: "#edeeee",
+    dividerColor: "#F6F6F6",
+    materialText: '#515151',
+    calendarIconColor: '#ce9127',
+    itemColor: '#FFFFFF',
+    headerHeight: 90,
+    tabBarHeight: 90,
+};
+

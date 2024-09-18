@@ -1,0 +1,96 @@
+import {StyleSheet} from "react-native";
+
+export const ListCardStyles = StyleSheet.create({
+    card: {
+        flex: 1,
+        minWidth: "50%",
+        margin: 5,
+        borderRadius: 10,
+        boxShadow: "0px 2px 5px rgba(0, 0, 0, 0.1)",
+        shadowOffset: { width: 1, height: 2 },
+        shadowOpacity: 0.2,
+        backgroundColor: "#fff",
+        shadowRadius: 2,
+        elevation: 3,
+        shadowColor: "#676767",
+    },
+    topWrapper: {
+        flexDirection: "row",
+        borderBottomWidth: 1,
+        borderBottomStyle: "solid",
+        borderBottomColor: "#e7e6e6",
+        paddingBottom: 10,
+    },
+    ticket: {
+        fontSize: 26,
+        fontWeight: "600",
+        marginLeft: 15,
+        marginTop: 12,
+        color: "#000",
+    },
+    type: {
+        color: "#fff",
+        textTransform: "uppercase",
+        fontSize: 9,
+        fontWeight: "500",
+    },
+    labelWrapper: {
+        borderBottomRightRadius: 20,
+        borderTopLeftRadius: 10,
+        paddingHorizontal: 13,
+        paddingVertical: 8,
+        minWidth: "40%",
+    },
+    bottomWrapper: {
+        height: 35,
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between",
+        paddingHorizontal: 10,
+        paddingVertical: 0,
+    },
+    techWrapper: {
+        flexDirection: 'row',
+        paddingLeft: 10,
+        marginTop: 8,
+        paddingBottom: 8,
+    },
+    techBox: {
+        paddingVertical: 2,
+        paddingHorizontal: 8,
+        marginRight: 5,
+        borderRadius: 5,
+        backgroundColor: "rgb(13,152,140)",
+    },
+    techName: {
+        fontSize: 12,
+        fontWeight: "500",
+        color: "#fff",
+    },
+    label: {
+        color: "#fff",
+        textTransform: "uppercase",
+        fontSize: 13,
+        fontWeight: "600",
+    },
+    dateWrapper: {
+        flex: 1,
+        alignItems: "flex-end",
+        justifyContent: "flex-end",
+        marginRight: 15,
+    },
+    date: {
+        fontSize: 10,
+        marginTop: 2,
+    },
+    time: {
+        fontSize: 12,
+        fontWeight: "600",
+        color: "#000",
+    },
+    address: {
+        fontSize: 12,
+        fontWeight: "500",
+        color: "#7B7D7E",
+    },
+})

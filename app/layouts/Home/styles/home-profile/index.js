@@ -1,0 +1,195 @@
+import {StyleSheet} from "react-native";
+import variables from "../../../../config/variables";
+
+export const HomeProfileStyles = StyleSheet.create({
+    screenContainer: {
+        flex: 1,
+        position: "relative",
+        backgroundColor: "#ffffff",
+    },
+
+    cardsWrapper: {
+        paddingTop: variables.headerHeight + 100,
+        height: "100%",
+        paddingBottom: 100,
+        padding: 5,
+        flexDirection: "row",
+        flexWrap: "wrap",
+        alignItems: "center",
+        position: "relative",
+        backgroundColor: "none",
+    },
+
+    chartCard: {
+        flex: 1,
+        alignItems: "center",
+        justifyContent: "center",
+        minWidth: "40%",
+        minHeight: 160,
+        maxWidth: "47%",
+        margin: "1.5%",
+        padding: 10,
+        borderRadius: 10,
+        shadowOffset: { width: 0, height: 1 },
+        shadowOpacity: 0.15,
+        backgroundColor: "#fff",
+        shadowRadius: 5,
+        elevation: 20,
+        shadowColor: "#000000",
+    },
+
+    tabCard: {
+        flex: 1,
+        minWidth: "40%",
+        minHeight: 160,
+        maxWidth: "47%",
+        margin: "1.5%",
+        borderRadius: 10,
+        shadowOffset: { width: 0, height: 1 },
+        shadowOpacity: 0.2,
+        backgroundColor: "#fff",
+        shadowRadius: 2,
+        elevation: 20,
+        shadowColor: "#000000",
+    },
+    tabLabel: {
+        fontSize: 26,
+        fontWeight: "600",
+        color: "#fff",
+        marginTop: 40
+    },
+
+
+    listCard: {
+        flex: 1,
+        minWidth: "50%",
+        height: 60,
+        margin: 5,
+        borderRadius: 10,
+        boxShadow: "0px 2px 5px rgba(0, 0, 0, 0.1)",
+        shadowOffset: { width: 1, height: 2 },
+        shadowOpacity: 0.2,
+        backgroundColor: "#fff",
+        shadowRadius: 2,
+        elevation: 20,
+        shadowColor: "#000000",
+        overflow: "hidden",
+    },
+    listLabel: {
+        fontSize: 22,
+        fontWeight: "600",
+        marginLeft: 5,
+        color: "#fff",
+    },
+    arrowIconWrapper: {
+        width: 35,
+        height: 35,
+        borderRadius: 30,
+        alignItems: "center",
+        justifyContent: "center",
+        backgroundColor: "rgba(255,255,255,0.2)",
+    },
+
+    scrollBtn: {
+        position: "absolute",
+        bottom: 20,
+        right: 20,
+        zIndex: 3,
+        width: 50,
+        height: 50,
+        borderRadius: 30,
+        alignItems: "center",
+        justifyContent: "center",
+        backgroundColor: "#0695e7",
+        shadowOffset: { width: 1, height: 2 },
+        shadowOpacity: 0.4,
+        shadowRadius: 10,
+        elevation: 20,
+        shadowColor: "#006ca8",
+    },
+
+    countStyle: {
+        fontSize: 20,
+        fontWeight: "800",
+        marginBottom: 0,
+        lineHeight: 32,
+        color: "#525252",
+    },
+    countDescription: {
+        fontSize: 12,
+        lineHeight: 15,
+        fontWeight: "600",
+        color: "#8a8a8a",
+    },
+
+
+    usersCard: {
+        flex: 1,
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: 5,
+        borderRadius: 20,
+        backgroundColor: "#fff",
+        margin: 15,
+        marginBottom: 0,
+    },
+    userInfoContainer: {
+        width: "100%",
+        flexDirection: "row",
+        position: "absolute",
+        top: 130,
+        left: 25,
+        zIndex: 5,
+    },
+    userIconWrapper: {
+        borderWidth: 3,
+        borderStyle: "solid",
+        borderColor: "#1da6d0",
+        borderRadius: 100,
+        padding: 5,
+        margin: 5,
+    },
+    userName: {
+        fontSize: 26,
+        lineHeight: 25,
+        marginBottom: 0,
+        fontWeight: "600",
+        color: "#fff",
+    },
+    userDescriptionWrapper: {
+        marginLeft: 5,
+        marginTop: 18,
+    },
+    userDescription: {
+        fontSize: 14,
+        lineHeight: 15,
+        color: "#fff",
+    },
+    userRole: {
+        width: 80,
+        marginTop: 18,
+        paddingHorizontal: 5,
+        justifyContent: "center",
+        alignItems: "center",
+        paddingVertical: 3,
+        backgroundColor: "rgba(43,135,218,0.9)",
+        borderRadius: 5,
+    },
+    userRoleLabel: {
+        fontSize: 13,
+        color: "#fff"
+    },
+
+    quote: {
+        fontSize: 13,
+        color: "#ffffff",
+        maxWidth: "90%",
+        textAlign: "right",
+    },
+    quoteAuthor: {
+        marginTop: 10,
+        fontWeight: "700",
+        color: "#fff",
+    },
+});
