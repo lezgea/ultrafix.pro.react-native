@@ -36,12 +36,12 @@ export default function OrdersInfoScreen({ route, navigation }) {
     const [deleteModalVisible, setDeleteModalVisible] = useState(false);
 
     async function loadData() {
-        setState({ loading: true })
-        let response = await getOrderInfo({ id: id })
-        if (response.status === "success") {
-            setState({ orderInfo: response.data })
-        }
-        setState({ loading: false })
+        // setState({ loading: true })
+        // let response = await getOrderInfo({ id: id })
+        // if (response.status === "success") {
+        //     setState({ orderInfo: response.data })
+        // }
+        // setState({ loading: false })
     }
 
     function onPressEdit() {

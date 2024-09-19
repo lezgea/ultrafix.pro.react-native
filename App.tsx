@@ -23,7 +23,7 @@ import UlCustomIcon from "./app/components/small/ul-custom-icon";
 import AppliersListScreen from "./app/layouts/Appliers/screens/appliers-list";
 import AppliersAddScreen from "./app/layouts/Appliers/screens/appliers-add";
 import AppliersSuccessScreen from "./app/layouts/Appliers/screens/appliers-success";
-import InvoicesViewScreen from "./app/layouts/Invoices/screens/invoices-view";
+// import InvoicesViewScreen from "./app/layouts/Invoices/screens/invoices-view";
 import ContactsListScreen from "./app/layouts/Contacts/screens/contacts-list";
 import ContactsInfoScreen from "./app/layouts/Contacts/screens/contacts-info";
 import variables from "./app/config/variables"
@@ -58,7 +58,7 @@ const mainRoutes = [
     { name: "ContactsInfo", component: ContactsInfoScreen },
     { name: "InvoicesList", component: InvoicesListScreen },
     { name: "InvoicesInfo", component: InvoicesInfoScreen },
-    { name: "InvoicesView", component: InvoicesViewScreen },
+    // { name: "InvoicesView", component: InvoicesViewScreen },
     { name: "InvoicesEdit", component: InvoicesEditScreen },
     { name: "OrdersList", component: OrdersListScreen },
     { name: "OrdersInfo", component: OrdersInfoScreen },

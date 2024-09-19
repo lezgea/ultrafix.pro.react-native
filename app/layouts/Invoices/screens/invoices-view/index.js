@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import WebView from "react-native-webview"
+// import WebView from "react-native-webview"
 import PriceC from "../../../../plugins/price-c";
 import RNHTMLtoPDF from 'react-native-html-to-pdf';
 import { AlertDialog, Button, useToast } from "native-base";
@@ -82,7 +82,7 @@ export default function InvoicesViewScreen({ route, navigation }) {
                 showBackBtn
             />
             <UlContentLoader loading={state.loading}>
-                <WebView
+                {/* <WebView
                     style={{ flex: 1 }}
                     onLoad={() => {
                         if (state.isEmailSend) {
@@ -97,7 +97,7 @@ export default function InvoicesViewScreen({ route, navigation }) {
                     }
                     scalesPageToFit={true}
                     source={{ html: ourHtml }}
-                />
+                /> */}
             </UlContentLoader>
         </View>
     )

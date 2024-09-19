@@ -6,15 +6,15 @@ import { getLabelColor } from "../../../../actions";
 import { OrdersPhotosStyles as st } from "../../styles";
 import { useToast } from "react-native-toast-notifications";
 import VX from "../../../../plugins/vx";
-import FastImage from 'react-native-fast-image'
+// import FastImage from 'react-native-fast-image'
 import { createImageProgress } from 'react-native-image-progress'
 import * as Progress from 'react-native-progress';
 import ImageView from "react-native-image-viewing";
 import variables from "../../../../config/variables";
-import * as ImagePicker from "react-native-image-picker"
-import RNFS from 'react-native-fs';
+// import * as ImagePicker from "react-native-image-picker"
+// import RNFS from 'react-native-fs';
 
-const Image = createImageProgress(FastImage);
+// const Image = createImageProgress(FastImage);
 
 // const createFormData = (photo, body) => {
 //     const data = new FormData();
@@ -77,17 +77,17 @@ export default function OrdersPhotosScreen({ route, navigation }) {
 
 
     const handlePicker = async () => {
-        await ImagePicker.launchImageLibrary({}, (response) => {
-            if (response.didCancel) {
-                console.log('User cancelled image picker');
-            } else if (response.error) {
-                console.log('ImagePicker Error: ', response.error);
-            } else if (response.customButton) {
-                console.log('User tapped custom button: ', response.customButton);
-            } else {
-                setState({ imageFile: response.assets[0] })
-            }
-        })
+        // await ImagePicker.launchImageLibrary({}, (response) => {
+        //     if (response.didCancel) {
+        //         console.log('User cancelled image picker');
+        //     } else if (response.error) {
+        //         console.log('ImagePicker Error: ', response.error);
+        //     } else if (response.customButton) {
+        //         console.log('User tapped custom button: ', response.customButton);
+        //     } else {
+        //         setState({ imageFile: response.assets[0] })
+        //     }
+        // })
     }
 
 
@@ -160,7 +160,7 @@ export default function OrdersPhotosScreen({ route, navigation }) {
                                         />
                                     </View>
                                 }
-                                <Image
+                                {/* <Image
                                     source={{ uri: file.url }}
                                     indicator={<Progress.Circle size={100} indeterminate={true} />}
                                     style={{
@@ -171,7 +171,7 @@ export default function OrdersPhotosScreen({ route, navigation }) {
                                     renderError={() => {
                                         return <View><UlText>Error</UlText></View>
                                     }}
-                                />
+                                /> */}
                             </TouchableOpacity>
 
                         )
