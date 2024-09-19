@@ -67,15 +67,6 @@ target 'UltraFixPro' do
         end
       end
     end
-
-    # Fix for Google Maps on the iOS Simulator (exclude arm64 architecture)
-    installer.pods_project.targets.each do |target|
-      if target.name == 'GoogleMaps' || target.name == 'GoogleMapsBase'
-        target.build_configurations.each do |config|
-          config.build_settings['EXCLUDED_ARCHS[sdk=iphonesimulator*]'] = 'arm64'
-        end
-      end
-    end
   end
 
   post_integrate do |installer|

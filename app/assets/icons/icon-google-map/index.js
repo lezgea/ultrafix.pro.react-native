@@ -1,5 +1,5 @@
 import React from 'react';
-import {SvgCss} from 'react-native-svg';
+import { SvgCss } from 'react-native-svg/lib/module/css';
 
 const xml = `
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="257" height="367" viewBox="0 0 257 367" fill="none">

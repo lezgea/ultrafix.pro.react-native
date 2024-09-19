@@ -9,7 +9,7 @@ import { getServices, getTechniciansList } from "../../../../api";
 import { SelectedItem } from "../../components";
 import { Formik } from 'formik'
 // import {object, string, number, date, InferType} from 'yup';
-import RNGooglePlaces from "react-native-google-places";
+// import RNGooglePlaces from "react-native-google-places";
 import { OrdersEditStyles as st } from "../../styles";
 import {
     UlBlueButton,
@@ -227,7 +227,7 @@ export default function OrdersEditScreen({ route, navigation }) {
                         >
                             Address
                         </FormControl.Label>
-                        <TouchableOpacity
+                        {/* <TouchableOpacity
                             style={st.wrapper}
                             onPress={() => {
                                 RNGooglePlaces.openAutocompleteModal()
@@ -253,7 +253,7 @@ export default function OrdersEditScreen({ route, navigation }) {
                                 color: 'black',
                                 fontSize: 16
                             }}>{state?.data?.address}</UlText>
-                        </TouchableOpacity>
+                        </TouchableOpacity> */}
                     </View>
 
                     <Flex direction="row" space={2}>
