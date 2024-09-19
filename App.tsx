@@ -4,34 +4,34 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NativeBaseProvider } from "native-base";
 import Auth from "./app/plugins/auth";
-import HomeProfileScreen from "./app/layouts/Home/screens/home-profile";
-import CalendarViewScreen from "./app/layouts/Calendar/screens/calendar-view";
-import ReportsMainScreen from "./app/layouts/Reports/screens/reports-main";
-import ReportsTechnicianListScreen from "./app/layouts/Reports/screens/reports-technician-list";
-import ReportsDispatcherListScreen from "./app/layouts/Reports/screens/reports-dispatcher-list";
-import ReportsInfoScreen from "./app/layouts/Reports/screens/reports-info";
-import InvoicesListScreen from "./app/layouts/Invoices/screens/invoices-list";
-import InvoicesInfoScreen from "./app/layouts/Invoices/screens/invoices-info";
-import ChatsListScreen from "./app/layouts/Chats/screens/chats-list";
-import OrdersListScreen from "./app/layouts/Orders/screens/orders-list";
-import OrdersInfoScreen from "./app/layouts/Orders/screens/orders-info";
-import OrdersAddScreen from "./app/layouts/Orders/screens/orders-add";
-import OrdersEditScreen from "./app/layouts/Orders/screens/orders-edit";
-import AuthLoginScreen from "./app/layouts/Auth/screens/auth-login";
-import AuthSplashScreen from "./app/layouts/Auth/screens/auth-splash";
+import HomeProfileScreen from "./app/screens/Home/screens/home-profile";
+import CalendarViewScreen from "./app/screens/Calendar/screens/calendar-view";
+import ReportsMainScreen from "./app/screens/Reports/screens/reports-main";
+import ReportsTechnicianListScreen from "./app/screens/Reports/screens/reports-technician-list";
+import ReportsDispatcherListScreen from "./app/screens/Reports/screens/reports-dispatcher-list";
+import ReportsInfoScreen from "./app/screens/Reports/screens/reports-info";
+import InvoicesListScreen from "./app/screens/Invoices/screens/invoices-list";
+import InvoicesInfoScreen from "./app/screens/Invoices/screens/invoices-info";
+import ChatsListScreen from "./app/screens/Chats/screens/chats-list";
+import OrdersListScreen from "./app/screens/Orders/screens/orders-list";
+import OrdersInfoScreen from "./app/screens/Orders/screens/orders-info";
+import OrdersAddScreen from "./app/screens/Orders/screens/orders-add";
+import OrdersEditScreen from "./app/screens/Orders/screens/orders-edit";
+import AuthLoginScreen from "./app/screens/Auth/screens/auth-login";
+import AuthSplashScreen from "./app/screens/Auth/screens/auth-splash";
 import UlCustomIcon from "./app/components/small/ul-custom-icon";
-import AppliersListScreen from "./app/layouts/Appliers/screens/appliers-list";
-import AppliersAddScreen from "./app/layouts/Appliers/screens/appliers-add";
-import AppliersSuccessScreen from "./app/layouts/Appliers/screens/appliers-success";
+import AppliersListScreen from "./app/screens/Appliers/screens/appliers-list";
+import AppliersAddScreen from "./app/screens/Appliers/screens/appliers-add";
+import AppliersSuccessScreen from "./app/screens/Appliers/screens/appliers-success";
 // import InvoicesViewScreen from "./app/layouts/Invoices/screens/invoices-view";
-import ContactsListScreen from "./app/layouts/Contacts/screens/contacts-list";
-import ContactsInfoScreen from "./app/layouts/Contacts/screens/contacts-info";
+import ContactsListScreen from "./app/screens/Contacts/screens/contacts-list";
+import ContactsInfoScreen from "./app/screens/Contacts/screens/contacts-info";
 import variables from "./app/config/variables"
-import ReportsEditScreen from "./app/layouts/Reports/screens/reports-edit";
+import ReportsEditScreen from "./app/screens/Reports/screens/reports-edit";
 import { ToastProvider } from 'react-native-toast-notifications'
 import { UlToast } from "./app/components";
-import InvoicesEditScreen from "./app/layouts/Invoices/screens/invoices-edit";
-import OrdersPhotosScreen from "./app/layouts/Orders/screens/orders-photos";
+import InvoicesEditScreen from "./app/screens/Invoices/screens/invoices-edit";
+import OrdersPhotosScreen from "./app/screens/Orders/screens/orders-photos";
 
 
 

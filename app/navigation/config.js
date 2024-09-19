@@ -1,4 +1,4 @@
-import Index from '../layouts/Auth/screens/auth-login';
+import Index from '../screens/Auth/screens/auth-login';
 
 
 const Screens = {

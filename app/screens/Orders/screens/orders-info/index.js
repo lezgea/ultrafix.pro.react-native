@@ -6,7 +6,7 @@ import { OrdersInfoStyles as st } from "../../styles";
 import { UlBlueCircleButton, UlContentLoader, UlDeleteModal, UlHeader } from "../../../../components";
 import Appliances from "../../../../plugins/appliances";
 import { IconGoogleMap } from "../../../../assets";
-import getDirections from "../../../../actions/google-map-directions";
+import getDirections from "../../../../utils/google-map-directions";
 import { IconWhiteFilledCall } from "../../../../assets/icons/icon-white-filled-call";
 
 

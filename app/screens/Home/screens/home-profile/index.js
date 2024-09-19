@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
-import { IconArrowMoveTop, IconUser, IconProfileCover, IconCircleGradient } from "../../../../assets";
+import { IconArrowMoveTop, IconUser, IconProfileCover, IconCircleGradient, ProfileCoverIcon } from "../../../../assets";
 import { getInvoicesSummary, getLoggedUserInfo, getOrdersSummary, loadDashboardData } from "../../../../api";
 import { Spacer } from "native-base";
 import * as Animatable from "react-native-animatable";
@@ -204,7 +204,7 @@ export default function HomeProfileScreen({ navigation }) {
                         iterationCount="1"
                         style={{ position: "absolute", top: -13, left: 0 }}
                     >
-                        <IconProfileCover width={VX.screenWidth()} height={430} />
+                        <ProfileCoverIcon width={VX.screenWidth()} height={430} />
                     </Animatable.View>
                     <Animatable.View
                         animation="fadeIn"

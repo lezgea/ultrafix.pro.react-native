@@ -6,7 +6,7 @@ import {
     View,
     SafeAreaView,
 } from "react-native";
-import getDirections from "../../../../actions/google-map-directions";
+import getDirections from "../../../../utils/google-map-directions";
 import { getOrdersGeometry, getOrdersList } from "../../../../api";
 import { TabCard, ListCard } from "../../components";
 import { getLabel } from "../../actions";
