@@ -15,7 +15,6 @@ import moment from "moment";
 import { getServices, getTechniciansList } from "../../../../api";
 import { ApplianceInfoCard, SelectedItem } from "../../components";
 // import RNGooglePlaces from "react-native-google-places";
-import { Formik } from 'formik'
 // import { object, string, number, date, InferType } from 'yup';
 import { OrdersAddStyles as st } from "../../styles";
 import {

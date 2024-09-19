@@ -7,7 +7,6 @@ import { Box, Card, Center, Flex, FormControl, HStack } from "native-base";
 import moment from "moment";
 import { getServices, getTechniciansList } from "../../../../api";
 // import {SelectedItem} from "../../components";
-import { Formik } from 'formik'
 import * as Animatable from "react-native-animatable";
 // import RNGooglePlaces from "react-native-google-places";
 import { ReportsEditStyles as st } from '../../styles/reports-edit'

@@ -7,7 +7,6 @@ import { Box, Card, Center, Flex, useToast, FormControl } from "native-base";
 import moment from "moment";
 import { getServices, getTechniciansList } from "../../../../api";
 import { SelectedItem } from "../../components";
-import { Formik } from 'formik'
 // import {object, string, number, date, InferType} from 'yup';
 // import RNGooglePlaces from "react-native-google-places";
 import { OrdersEditStyles as st } from "../../styles";

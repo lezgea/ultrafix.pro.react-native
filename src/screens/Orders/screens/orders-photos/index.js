@@ -7,8 +7,6 @@ import { OrdersPhotosStyles as st } from "../../styles";
 import { useToast } from "react-native-toast-notifications";
 import VX from "../../../../plugins/vx";
 // import FastImage from 'react-native-fast-image'
-import { createImageProgress } from 'react-native-image-progress'
-import * as Progress from 'react-native-progress';
 import ImageView from "react-native-image-viewing";
 import variables from "../../../../config/variables";
 // import * as ImagePicker from "react-native-image-picker"
