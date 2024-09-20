@@ -17,10 +17,11 @@ const iconSvg = `
 `;
 
 interface IconProps {
-    size?: string | number,
+    width?: string | number,
+    height?: string | number,
     color?: string,
 }
 
-export const ProfileCoverIcon: React.FC<IconProps> = ({ size, color }) => (
-    <SvgXml xml={iconSvg} width={size || "50"} height={size || "50"} fill={color} />
+export const ProfileCoverIcon: React.FC<IconProps> = ({ width, height, color }) => (
+    <SvgXml xml={iconSvg} width={width || "50"} height={height || "50"} fill={color} />
 );

@@ -1,35 +1,28 @@
-import React, { useEffect, useMemo, useReducer, useRef, useState } from "react";
-import {
-    FlatList,
-    StyleSheet,
-    TouchableOpacity,
-    View,
-    SafeAreaView,
-} from "react-native";
-import getDirections from "../../../../utils/google-map-directions";
-import { getOrdersGeometry, getOrdersList } from "../../../../api";
-import { TabCard, ListCard } from "../../components";
+import { getOrdersGeometry, getOrdersList } from "@api/orders";
+import { UlContentLoader, UlFilterBar, UlHeader } from "@components/medium";
+import DateLib from "@plugins/date-lib";
+import getDirections from "@utils/google-map-directions";
+import { useToast } from "native-base";
+import React from "react";
+import { FlatList, TouchableOpacity, View } from "react-native";
+import { OrdersListStyles as st } from "@screens/Orders/styles";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { ArrowMoveTopIcon, GoogleMapIcon } from "@assets/icons";
+import { UlEmptyContent, UlEmptyFooter, UlFooterLoading } from "@components/small";
+import VX from "@plugins/vx";
+import { ListCard, TabCard } from "@screens/Orders/components";
 import { getLabel } from "@screens/Orders/actions";
-import { IconGoogleMap, ArrowMoveTopIcon } from "../../../../assets";
-import { Box, Card, Center, Flex, useToast } from "native-base";
-import { OrdersListStyles as st } from "../../styles";
-import DateLib from "../../../../plugins/date-lib";
-import {
-    UlContentLoader,
-    UlEmptyContent,
-    UlEmptyFooter,
-    UlFilterBar,
-    UlFooterLoading,
-    UlHeader
-} from "../../../../components";
-import VX from "../../../../plugins/vx";
 
 
+interface IOrderListProps {
+    navigation: any,
+    route: any,
+}
 
-export default function OrdersListScreen(props) {
+export const OrdersListScreen: React.FC<IOrderListProps> = (props) => {
     let { navigation, route } = props
-    const [state, setState] = useReducer(
-        (prevState, newState) => {
+    const [state, setState] = React.useReducer(
+        (prevState: any, newState: any) => {
             return { ...prevState, ...newState };
         },
         {
@@ -46,20 +39,20 @@ export default function OrdersListScreen(props) {
         },
     )
 
-    const toast = useToast()
+    const toast = useToast();
 
     const flatListRef = React.useRef()
-    const [tabView, setTabView] = useState(false)
-    const [topPadding, setTopPadding] = useState(55)
-    const [scrollBtnVisible, setScrollBtnVisible] = useState(false)
-    const [filterModalVisible, setFilterModalVisible] = useState(false)
-    const [coordinates, setCoordinates] = useState([])
-    const [lastDestination, setLastDestination] = useState({})
+    const [tabView, setTabView] = React.useState(false)
+    const [topPadding, setTopPadding] = React.useState(55)
+    const [scrollBtnVisible, setScrollBtnVisible] = React.useState(false)
+    const [filterModalVisible, setFilterModalVisible] = React.useState(false)
+    const [coordinates, setCoordinates] = React.useState([])
+    const [lastDestination, setLastDestination] = React.useState({})
 
 
     function scrollToTop() {
-        flatListRef.current?.scrollToOffset({ animated: true, offset: 0 })
-        setScrollBtnVisible(false)
+        // flatListRef.current?.scrollToOffset({ animated: true, offset: 0 })
+        // setScrollBtnVisible(false)
     }
 
     function onShowFilters() {
@@ -94,25 +87,25 @@ export default function OrdersListScreen(props) {
 
 
     const handleGetDirections = async () => {
-        let pendingOrders = state.ordersList.filter(item => item.label?.value === "pending")
-        let orderIds = pendingOrders.map(item => item.id)
-        let response = await getOrdersGeometry({ order_ids: orderIds })
-        let wayPoints = response.data?.map(item => item[0]?.geometry)
+        // let pendingOrders = state.ordersList.filter(item => item.label?.value === "pending")
+        // let orderIds = pendingOrders.map(item => item.id)
+        // let response = await getOrdersGeometry({ order_ids: orderIds })
+        // let wayPoints = response.data?.map(item => item[0]?.geometry)
 
-        await getDirections({
-            // destination: wayPoints[wayPoints.length - 1],
-            params: [
-                {
-                    key: "travelmode",
-                    value: "driving",        // may be "walking", "bicycling" or "transit" as well
-                },
-                {
-                    key: "dir_action",
-                    value: "navigate"       // this instantly initializes navigation using the given travel mode
-                }
-            ],
-            waypoints: wayPoints,
-        })
+        // await getDirections({
+        //     // destination: wayPoints[wayPoints.length - 1],
+        //     params: [
+        //         {
+        //             key: "travelmode",
+        //             value: "driving",        // may be "walking", "bicycling" or "transit" as well
+        //         },
+        //         {
+        //             key: "dir_action",
+        //             value: "navigate"       // this instantly initializes navigation using the given travel mode
+        //         }
+        //     ],
+        //     waypoints: wayPoints,
+        // })
     }
 
 
@@ -145,8 +138,8 @@ export default function OrdersListScreen(props) {
             <UlFilterBar
                 setState={setState}
                 type={state.ordersType}
-                setType={(v) => setState({ ordersType: v })}
-                onPressShowMore={(v) => setTopPadding(v)}
+                setType={(v: string) => setState({ ordersType: v })}
+                onPressShowMore={(v: number) => setTopPadding(v)}
             />
             <UlContentLoader loading={state.loading}>
                 <SafeAreaView>
@@ -155,7 +148,7 @@ export default function OrdersListScreen(props) {
                             ?
                             <FlatList
                                 key={"#"}
-                                ref={flatListRef}
+                                // ref={flatListRef}
                                 data={state.ordersList}
                                 numColumns={2}
                                 keyExtractor={(order, index) => `order-${index}-${order.id.toString()}`}
@@ -178,7 +171,7 @@ export default function OrdersListScreen(props) {
                             :
                             <FlatList
                                 key={"_"}
-                                ref={flatListRef}
+                                // ref={flatListRef}
                                 data={state.ordersList}
                                 numColumns={1}
                                 keyExtractor={(order, index) => `order-${index}-${order.id.toString()}`}
@@ -220,10 +213,10 @@ export default function OrdersListScreen(props) {
                     style={st.mapBtn}
                     onPress={handleGetDirections}
                 >
-                    <IconGoogleMap height={35} width={45} />
+                    <GoogleMapIcon size={45} />
                 </TouchableOpacity>
             }
-        </View>
+        </View >
     );
 }
 

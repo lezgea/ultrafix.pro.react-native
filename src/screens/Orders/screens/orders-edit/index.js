@@ -22,7 +22,7 @@ import {
 } from "../../../../components";
 
 
-export default function OrdersEditScreen({ route, navigation }) {
+export const OrdersEditScreen = ({ route, navigation }) => {
     let { id } = route.params
     const [state, dispatch] = useReducer(orderReducer, {}, () => ORDER_INITIAL)
     const [datePickerVisible, setDatePickerVisible] = useState(false)

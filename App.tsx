@@ -13,10 +13,7 @@ import ReportsInfoScreen from "@screens/Reports/screens/reports-info";
 import InvoicesListScreen from "@screens/Invoices/screens/invoices-list";
 import InvoicesInfoScreen from "@screens/Invoices/screens/invoices-info";
 import ChatsListScreen from "@screens/Chats/screens/chats-list";
-import OrdersListScreen from "@screens/Orders/screens/orders-list";
-import OrdersInfoScreen from "@screens/Orders/screens/orders-info";
-import OrdersAddScreen from "@screens/Orders/screens/orders-add";
-import OrdersEditScreen from "@screens/Orders/screens/orders-edit";
+import { OrdersAddScreen, OrdersEditScreen, OrdersInfoScreen, OrdersListScreen, OrdersPhotosScreen } from "@screens/Orders";
 import AuthLoginScreen from "@screens/Auth/screens/auth-login";
 import AuthSplashScreen from "@screens/Auth/screens/auth-splash";
 import AppliersListScreen from "@screens/Appliers/screens/appliers-list";
@@ -30,7 +27,6 @@ import ReportsEditScreen from "@screens/Reports/screens/reports-edit";
 import { ToastProvider } from 'react-native-toast-notifications'
 import { UlToast } from "./src/components";
 import InvoicesEditScreen from "@screens/Invoices/screens/invoices-edit";
-import OrdersPhotosScreen from "@screens/Orders/screens/orders-photos";
 import { FileIcon, HomeIcon, ProjectIcon } from "@assets/icons";
 
 
@@ -137,7 +133,7 @@ const NavigationRoutes = () => {
             }}
         >
             <Tab.Screen
-                name="HomeProfile"
+                name="Home"
                 options={{
                     tabBarLabel: "home-profile",
                     tabBarLabelStyle: { display: "none" },

@@ -3,18 +3,23 @@ import React, { useEffect, useMemo, useReducer, useState } from "react";
 import { ApplianceInfoCard, OrderButtons, ServiceInfoCard } from "../../components";
 import { getOrderInfo, getServices } from "../../../../api";
 import { OrdersInfoStyles as st } from "../../styles";
-import { UlBlueCircleButton, UlContentLoader, UlDeleteModal, UlHeader } from "../../../../components";
-import Appliances from "../../../../plugins/appliances";
-import { FilledCallIcon, GoogleMapIcon, IconGoogleMap } from "../../../../assets";
-import getDirections from "../../../../utils/google-map-directions";
+import Appliances from "@plugins/appliances";
+import getDirections from "@utils/google-map-directions";
+import { FilledCallIcon, GoogleMapIcon } from "@assets/icons";
+import { UlDeleteModal } from "@components/small/ul-modals/ul-delete-modal/UDeleteModal";
+import { UlContentLoader, UlHeader } from "@components/medium";
 
+interface OrdersInfoScreenProps {
+    route: any,
+    navigation: any,
+}
 
-export default function OrdersInfoScreen({ route, navigation }) {
+export const OrdersInfoScreen: React.FC<OrdersInfoScreenProps> = ({ route, navigation }) => {
     let { id, label } = route.params
 
     const [headerColor, setHeaderColor] = useState(label.color)
     const [state, setState] = useReducer(
-        (prevState, newState) => {
+        (prevState: any, newState: any) => {
             return { ...prevState, ...newState };
         },
         {
@@ -25,7 +30,7 @@ export default function OrdersInfoScreen({ route, navigation }) {
         },
     )
     const [params, setParams] = useReducer(
-        (prevState, newState) => {
+        (prevState: any, newState: any) => {
             return { ...prevState, ...newState };
         },
         {
@@ -35,12 +40,13 @@ export default function OrdersInfoScreen({ route, navigation }) {
     const [deleteModalVisible, setDeleteModalVisible] = useState(false);
 
     async function loadData() {
-        // setState({ loading: true })
-        // let response = await getOrderInfo({ id: id })
+        setState({ loading: true })
+        let response = await getOrderInfo({ id: id })
+        console.log('@@@', response)
         // if (response.status === "success") {
         //     setState({ orderInfo: response.data })
         // }
-        // setState({ loading: false })
+        setState({ loading: false })
     }
 
     function onPressEdit() {
@@ -104,7 +110,7 @@ export default function OrdersInfoScreen({ route, navigation }) {
                 <ScrollView contentContainerStyle={st.cardsWrapper}>
                     <ServiceInfoCard info={state.orderInfo} {...route.params} />
                     {
-                        state.orderInfo?.appliances?.map((item, index) =>
+                        state.orderInfo?.appliances?.map((item: { service_id: any; }, index: any) =>
                             <ApplianceInfoCard
                                 key={index}
                                 info={item}

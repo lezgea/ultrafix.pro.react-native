@@ -27,7 +27,7 @@ import variables from "../../../../config/variables";
 //     return data;
 // };
 
-export default function OrdersPhotosScreen({ route, navigation }) {
+export const OrdersPhotosScreen = ({ route, navigation }) => {
     let { id } = route.params
     const toast = useToast()
 

@@ -1,4 +1,4 @@
-import {StyleSheet} from "react-native";
+import { StyleSheet } from "react-native";
 import variables from "../../../../config/variables";
 
 export const HomeProfileStyles = StyleSheet.create({
