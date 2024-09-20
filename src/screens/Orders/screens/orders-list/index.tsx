@@ -236,7 +236,7 @@ export const OrdersListScreen: React.FC<IOrderListProps> = (props) => {
                 {
                     scrollBtnVisible &&
                     <TouchableOpacity style={st.scrollBtn} onPress={scrollToTop}>
-                        <ArrowMoveTopIcon size={25} />
+                        <ArrowMoveTopIcon size={25} color="#fff" />
                     </TouchableOpacity>
                 }
                 {/*<TouchableOpacity style={st.addBtn} onPress={onCreateOrder}>*/}

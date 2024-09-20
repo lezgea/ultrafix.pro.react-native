@@ -2,13 +2,13 @@ import React from "react";
 import { ScrollView, View } from "react-native";
 import { UlHeader, UlContentLoader, UlText, UlInfoLine, UlDarkBlueButton, UlGreenButton } from "../../../../components";
 import { getInvoiceInfo } from "../../../../api";
-import { IconBlueCheck, IconGrayCheck } from "../../../../assets";
 import PriceC from "../../../../plugins/price-c";
 import { getLabelColor } from "@utils/get-label-color";
 import { ReportsInfoStyles as st } from "../../styles";
 import moment from "moment/moment";
 import { useToast } from "react-native-toast-notifications";
 import * as Animatable from "react-native-animatable";
+import { CheckIcon } from "@assets/icons";
 
 
 
@@ -75,8 +75,8 @@ export default function ReportsInfoScreen({ route, navigation }) {
                             <View style={{ flexDirection: "row", alignItems: "center" }}>
                                 {
                                     state.data?.status?.value === "paid"
-                                        ? <IconBlueCheck height={25} width={25} />
-                                        : <IconGrayCheck height={25} width={25} />
+                                        ? <CheckIcon size={25} color="#00A2FF" />
+                                        : <CheckIcon size={25} color="#dedede" />
                                 }
                                 <UlText style={st.label}>{state.data?.status?.trans}</UlText>
                             </View>

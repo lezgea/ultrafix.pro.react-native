@@ -119,7 +119,7 @@ export default function ReportsTechnicianListScreen({ navigation }) {
                         style={st.scrollBtn}
                         onPress={scrollToTop}
                     >
-                        <ArrowMoveTopIcon size={25} />
+                        <ArrowMoveTopIcon size={25} color="#fff" />
                     </TouchableOpacity>
                 }
             </UlContentLoader>
