@@ -63,7 +63,7 @@ export const HomeProfileStyles = StyleSheet.create({
     listCard: {
         flex: 1,
         minWidth: "50%",
-        height: 60,
+        height: 70,
         margin: 5,
         borderRadius: 10,
         boxShadow: "0px 2px 5px rgba(0, 0, 0, 0.1)",

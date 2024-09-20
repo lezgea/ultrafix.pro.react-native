@@ -86,27 +86,66 @@ export const OrdersListScreen: React.FC<IOrderListProps> = (props) => {
     }
 
 
-    const handleGetDirections = async () => {
-        // let pendingOrders = state.ordersList.filter(item => item.label?.value === "pending")
-        // let orderIds = pendingOrders.map(item => item.id)
-        // let response = await getOrdersGeometry({ order_ids: orderIds })
-        // let wayPoints = response.data?.map(item => item[0]?.geometry)
-
-        // await getDirections({
-        //     // destination: wayPoints[wayPoints.length - 1],
-        //     params: [
-        //         {
-        //             key: "travelmode",
-        //             value: "driving",        // may be "walking", "bicycling" or "transit" as well
-        //         },
-        //         {
-        //             key: "dir_action",
-        //             value: "navigate"       // this instantly initializes navigation using the given travel mode
-        //         }
-        //     ],
-        //     waypoints: wayPoints,
-        // })
+    interface Order {
+        id: number;
+        label?: { value: string };
+        // Add any other relevant fields
     }
+
+    interface GeometryResponse {
+        data?: Array<Array<{ geometry: any }>>;
+    }
+
+    interface GetDirectionsParams {
+        key: string;
+        value: string;
+    }
+
+    // Assuming getOrdersGeometry returns a response of this type
+    async function getOrdersGeometry(params: { order_ids: number[] }): Promise<GeometryResponse> {
+        // implementation here
+        return { data: [] }; // mock return for the example
+    }
+
+    // Assuming getDirections accepts these parameters
+    async function getDirections(params: {
+        destination?: any;
+        waypoints?: any[];
+        params: GetDirectionsParams[];
+    }): Promise<void> {
+        // implementation here
+    }
+
+    const handleGetDirections = async () => {
+        // Assuming `state` is React component state, you access it directly without needing it as an argument
+        let pendingOrders = state.ordersList.filter((item: Order) => item.label?.value === "pending");
+
+        let orderIds = pendingOrders.map((item: Order) => item.id);
+
+        let response = await getOrdersGeometry({ order_ids: orderIds });
+
+        let wayPoints = response.data?.map(item => item[0]?.geometry).filter(Boolean);
+
+        if (!wayPoints || wayPoints.length === 0) {
+            console.error("No waypoints available");
+            return;
+        }
+
+        await getDirections({
+            destination: wayPoints[wayPoints.length - 1], // Optional
+            params: [
+                {
+                    key: "travelmode",
+                    value: "driving", // may be "walking", "bicycling" or "transit" as well
+                },
+                {
+                    key: "dir_action",
+                    value: "navigate", // instantly initializes navigation
+                }
+            ],
+            waypoints: wayPoints,
+        });
+    };
 
 
     React.useEffect(() => {
@@ -142,57 +181,55 @@ export const OrdersListScreen: React.FC<IOrderListProps> = (props) => {
                 onPressShowMore={(v: number) => setTopPadding(v)}
             />
             <UlContentLoader loading={state.loading}>
-                <SafeAreaView>
-                    {
-                        tabView
-                            ?
-                            <FlatList
-                                key={"#"}
-                                // ref={flatListRef}
-                                data={state.ordersList}
-                                numColumns={2}
-                                keyExtractor={(order, index) => `order-${index}-${order.id.toString()}`}
-                                renderItem={(order) =>
-                                    <TabCard
-                                        index={order.index}
-                                        navigation={navigation}
-                                        order={order.item}
-                                        label={getLabel(order.item.label.value)}
-                                    />
-                                }
-                                onEndReached={() => {
-                                    setScrollBtnVisible(true)
-                                    setState({ params: { ...state.params, page: state.params.page + 1 } })
-                                }}
-                                ListEmptyComponent={<UlEmptyContent />}
-                                ListFooterComponent={() => state.bottomLoading ? <UlFooterLoading /> : <UlEmptyFooter />}
-                                contentContainerStyle={{ padding: 5, paddingTop: topPadding, minHeight: VX.screenHeight() }}
-                            />
-                            :
-                            <FlatList
-                                key={"_"}
-                                // ref={flatListRef}
-                                data={state.ordersList}
-                                numColumns={1}
-                                keyExtractor={(order, index) => `order-${index}-${order.id.toString()}`}
-                                renderItem={(order) =>
-                                    <ListCard
-                                        index={order.index}
-                                        navigation={navigation}
-                                        order={order.item}
-                                        label={getLabel(order.item.label.value)}
-                                    />
-                                }
-                                onEndReached={() => {
-                                    setScrollBtnVisible(true)
-                                    setState({ params: { ...state.params, page: state.params.page + 1 } })
-                                }}
-                                ListEmptyComponent={<UlEmptyContent />}
-                                ListFooterComponent={() => state.bottomLoading ? <UlFooterLoading /> : <UlEmptyFooter />}
-                                contentContainerStyle={{ padding: 5, paddingTop: topPadding, minHeight: VX.screenHeight() }}
-                            />
-                    }
-                </SafeAreaView>
+                {/* <SafeAreaView> */}
+                {
+                    tabView
+                        ?
+                        <FlatList
+                            key={"#"}
+                            data={state.ordersList}
+                            numColumns={2}
+                            keyExtractor={(order, index) => `order-${index}-${order.id.toString()}`}
+                            renderItem={(order) =>
+                                <TabCard
+                                    index={order.index}
+                                    navigation={navigation}
+                                    order={order.item}
+                                    label={getLabel(order.item.label.value)}
+                                />
+                            }
+                            onEndReached={() => {
+                                setScrollBtnVisible(true)
+                                setState({ params: { ...state.params, page: state.params.page + 1 } })
+                            }}
+                            ListEmptyComponent={<UlEmptyContent />}
+                            ListFooterComponent={() => state.bottomLoading ? <UlFooterLoading /> : <UlEmptyFooter />}
+                            contentContainerStyle={{ padding: 5, paddingTop: topPadding, minHeight: VX.screenHeight() }}
+                        />
+                        :
+                        <FlatList
+                            key={"_"}
+                            data={state.ordersList}
+                            numColumns={1}
+                            keyExtractor={(order, index) => `order-${index}-${order.id.toString()}`}
+                            renderItem={(order) =>
+                                <ListCard
+                                    index={order.index}
+                                    navigation={navigation}
+                                    order={order.item}
+                                    label={getLabel(order.item.label.value)}
+                                />
+                            }
+                            onEndReached={() => {
+                                setScrollBtnVisible(true)
+                                setState({ params: { ...state.params, page: state.params.page + 1 } })
+                            }}
+                            ListEmptyComponent={<UlEmptyContent />}
+                            ListFooterComponent={() => state.bottomLoading ? <UlFooterLoading /> : <UlEmptyFooter />}
+                            contentContainerStyle={{ padding: 5, paddingTop: topPadding, minHeight: VX.screenHeight() }}
+                        />
+                }
+                {/* </SafeAreaView> */}
             </UlContentLoader>
 
             <View style={st.rightBtnsWrapper}>

@@ -1,6 +1,6 @@
 import { FlatList, SafeAreaView, TouchableOpacity, View } from "react-native";
 import React, { useEffect, useReducer, useState } from "react";
-import { IconArrowMoveTop } from "../../../../assets";
+import { ArrowMoveTopIcon } from "@assets/icons";
 import { TechListCard } from "../../components";
 import { ReportsTechnicianListStyles as st } from "../../styles";
 import {
@@ -119,7 +119,7 @@ export default function ReportsTechnicianListScreen({ navigation }) {
                         style={st.scrollBtn}
                         onPress={scrollToTop}
                     >
-                        <IconArrowMoveTop width={25} height={25} />
+                        <ArrowMoveTopIcon size={25} />
                     </TouchableOpacity>
                 }
             </UlContentLoader>

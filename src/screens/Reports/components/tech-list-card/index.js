@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import { IconBlueCheck, IconGrayCheck, UserIcon, UserSettingsIcon } from "../../../../assets";
+import { CheckIcon, IconBlueCheck, IconGrayCheck, UserIcon, UserSettingsIcon } from "../../../../assets";
 import PriceC from "../../../../plugins/price-c";
 import { UlText } from "../../../../components";
 import DateLib from "../../../../plugins/date-lib";
@@ -80,8 +80,8 @@ export const TechListCard = (props) => {
                     <View style={{ flexDirection: "row", alignItems: "center" }}>
                         {
                             report?.status?.value === "paid"
-                                ? <IconBlueCheck height={25} width={25} />
-                                : report.employee_earnings ? <IconGrayCheck height={25} width={25} /> : null
+                                ? <CheckIcon size={25} color="#00A2FF" />
+                                : report.employee_earnings ? <CheckIcon size={25} color="#dedede" /> : null
                         }
                         <View style={{ marginLeft: 6 }}>
                             <UlText style={[st.amount, { color: !report.employee_earnings ? "#fff" : "#000" }]}>$ {PriceC.convert(report.employee_earnings)}</UlText>

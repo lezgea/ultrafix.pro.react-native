@@ -43,9 +43,9 @@ export const OrdersInfoScreen: React.FC<OrdersInfoScreenProps> = ({ route, navig
         setState({ loading: true })
         let response = await getOrderInfo({ id: id })
         console.log('@@@', response)
-        // if (response.status === "success") {
-        //     setState({ orderInfo: response.data })
-        // }
+        if (response.status === "success") {
+            setState({ orderInfo: response.data })
+        }
         setState({ loading: false })
     }
 

@@ -1,6 +1,7 @@
 import { Text, TouchableOpacity, StyleSheet } from "react-native";
 import React from "react";
 import { UlText } from "../../ul-text";
+import { DownIcon } from "@assets/icons";
 
 
 export const UlSelectButton = (props) => {
@@ -12,11 +13,9 @@ export const UlSelectButton = (props) => {
             onPress={onPress}
         >
             {
-                // icon
-                //     ? <UlCustomIcon name={icon} color={iconColor} size={iconSize} />
-                //     :
-
-                <UlText style={[st.btnLabel, { ...labelStyle }, selected && { color: "#fff" }]}>{label}</UlText>
+                icon
+                    ? <DownIcon size={15} />
+                    : <UlText style={[st.btnLabel, { ...labelStyle }, selected && { color: "#fff" }]}>{label}</UlText>
             }
         </TouchableOpacity>
     )
