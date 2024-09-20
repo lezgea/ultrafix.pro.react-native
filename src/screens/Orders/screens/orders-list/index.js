@@ -10,7 +10,7 @@ import getDirections from "../../../../utils/google-map-directions";
 import { getOrdersGeometry, getOrdersList } from "../../../../api";
 import { TabCard, ListCard } from "../../components";
 import { getLabel } from "@screens/Orders/actions";
-import { IconGoogleMap, IconArrowMoveTop, IconNoData, ArrowMoveTopIcon } from "../../../../assets";
+import { IconGoogleMap, ArrowMoveTopIcon } from "../../../../assets";
 import { Box, Card, Center, Flex, useToast } from "native-base";
 import { OrdersListStyles as st } from "../../styles";
 import DateLib from "../../../../plugins/date-lib";
