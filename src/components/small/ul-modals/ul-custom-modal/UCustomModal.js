@@ -1,7 +1,7 @@
 import React from 'react';
 import { Modal, Text, View, StyleSheet, TouchableOpacity } from "react-native";
-import UlCustomIcon from "../../ul-custom-icon";
 import { UlText } from "../../ul-text";
+import { CloseIcon } from '@assets/icons';
 
 
 export const UlCustomModal = (props) => {
@@ -26,7 +26,7 @@ export const UlCustomModal = (props) => {
                         <View style={st.headerContainer}>
                             <UlText style={{ fontSize: 18, marginTop: 5, color: "#959DA0" }}>{label}</UlText>
                             <TouchableOpacity style={{ position: "absolute", right: 20 }} onPress={onClose}>
-                                <UlCustomIcon name="fog-x" color={"#a4a4a4"} size={15} />
+                                <CloseIcon color={"#a4a4a4"} size={15} />
                             </TouchableOpacity>
                         </View>
                         <View style={{ padding: 20 }}>

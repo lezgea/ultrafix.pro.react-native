@@ -3,10 +3,10 @@ import React from "react";
 import PriceC from "../../../../plugins/price-c";
 import DateLib from "../../../../plugins/date-lib";
 import { UlText } from "../../../../components";
-import UlCustomIcon from "../../../../components/small/ul-custom-icon";
 import TimeC from "../../../../plugins/time-c";
 import * as Animatable from "react-native-animatable";
-import { getLabelColor } from "../../../../actions";
+import { getLabelColor } from "@utils/get-label-color";
+import { UserIcon, UserSettingsIcon } from "@assets/icons";
 
 
 export const ListCard = (props) => {
@@ -51,7 +51,7 @@ export const ListCard = (props) => {
                         {
                             !!invoice.users?.length &&
                             <>
-                                <UlCustomIcon name={"fog-user-settings"} size={25} color={"#999999"} />
+                                <UserSettingsIcon size={25} color={"#999999"} />
                                 <View style={{ marginLeft: 6 }}>
                                     <UlText style={st.personInfoLabel}>Technician</UlText>
                                     <UlText style={st.personInfoName}>{invoice.users[0]?.name}</UlText>
@@ -64,7 +64,7 @@ export const ListCard = (props) => {
                             <UlText style={st.personInfoLabel}>Customer</UlText>
                             <UlText style={st.personInfoName}>{invoice.customer_name}</UlText>
                         </View>
-                        <UlCustomIcon name={"fog-user"} size={25} color={"#999999"} />
+                        <UserIcon size={25} color={"#999999"} />
                     </View>
                 </Animatable.View>
                 <View style={st.paymentInfoWrapper}>

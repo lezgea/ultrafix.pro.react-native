@@ -1,7 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import UlCustomIcon from "../../../../components/small/ul-custom-icon";
-import { IconBlueCheck, IconGrayCheck } from "../../../../assets";
+import { IconBlueCheck, IconGrayCheck, UserIcon, UserSettingsIcon } from "../../../../assets";
 import PriceC from "../../../../plugins/price-c";
 import { UlText } from "../../../../components";
 import DateLib from "../../../../plugins/date-lib";
@@ -63,7 +62,7 @@ export const TechListCard = (props) => {
                     style={st.personsInfoWrapper}
                 >
                     <View style={st.technicianWrapper}>
-                        <UlCustomIcon name={"fog-user-settings"} size={25} color={"#999999"} />
+                        <UserSettingsIcon size={25} color={"#999999"} />
                         <View style={{ marginLeft: 6 }}>
                             <UlText style={st.personInfoLabel}>Technician</UlText>
                             <UlText style={st.personInfoName}>{report?.users[0]?.name}</UlText>
@@ -74,7 +73,7 @@ export const TechListCard = (props) => {
                             <UlText style={st.personInfoLabel}>Customer</UlText>
                             <UlText style={st.personInfoName}>{report.customer_name}</UlText>
                         </View>
-                        <UlCustomIcon name={"fog-user"} size={25} color={"#999999"} />
+                        <UserIcon size={25} color={"#999999"} />
                     </View>
                 </Animatable.View>
                 <View style={st.paymentInfoWrapper}>

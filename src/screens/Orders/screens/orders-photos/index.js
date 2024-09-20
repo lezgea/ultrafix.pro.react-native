@@ -2,7 +2,6 @@ import React from "react";
 import { ScrollView, View, TouchableOpacity } from "react-native";
 import { UlHeader, UlContentLoader, UlText, UlBlueCircleButton, UlEmptyContent, UlRedCircleButton } from "../../../../components";
 import { addOrderPhoto, getOrderInfo, ordersFileDelete, ordersFileUpload } from "../../../../api";
-import { getLabelColor } from "../../../../actions";
 import { OrdersPhotosStyles as st } from "../../styles";
 import { useToast } from "react-native-toast-notifications";
 import VX from "../../../../plugins/vx";

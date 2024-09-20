@@ -3,7 +3,7 @@ import { FlatList, TouchableOpacity, View, SafeAreaView } from "react-native";
 import { IconArrowMoveTop } from "../../../../assets";
 import { getInvoicesList } from "../../../../api";
 import { ListCard } from "../../components";
-import { getLabel } from "../../actions";
+import { getLabel } from "@screens/Invoices/actions";
 import {
     UlContentLoader,
     UlEmptyContent,

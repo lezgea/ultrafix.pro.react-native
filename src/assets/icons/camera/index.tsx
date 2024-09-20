@@ -19,11 +19,10 @@ const iconSvg = `
 `;
 
 interface IconProps {
-    width?: string | number,
-    height?: string | number,
+    size?: string | number,
     color?: string,
 }
 
-export const CameraIcon: React.FC<IconProps> = ({ width, height, color }) => (
-    <SvgXml xml={iconSvg} width={width || "50"} height={height || "50"} fill={color} />
+export const CameraIcon: React.FC<IconProps> = ({ size, color }) => (
+    <SvgXml xml={iconSvg} width={size || "50"} height={size || "50"} fill={color} />
 );

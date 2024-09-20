@@ -1,5 +1,4 @@
 export * from './ul-buttons'
-export * from './ul-custom-icon'
 export * from './ul-date-picker'
 export * from './ul-footer-loading'
 export * from './ul-form'

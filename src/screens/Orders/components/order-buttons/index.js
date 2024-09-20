@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { StyleSheet, View } from "react-native";
 import { STATUSES } from "../../../../constants";
 import { updateOrderStatus } from "../../../../api";
-import { getLabelById } from "../../actions";
+import { getLabelById } from "@screens/Orders/actions";
 import { AlertDialog, Button } from "native-base";
 import { UlBlueButton, UlFormSelect, UlGreenButton, UlPinkButton } from "../../../../components";
 import variables from "../../../../config/variables";

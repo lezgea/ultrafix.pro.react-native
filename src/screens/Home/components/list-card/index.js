@@ -1,10 +1,9 @@
-import {Text, TouchableOpacity, View} from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 import React from "react";
-import UlCustomIcon from "../../../../components/small/ul-custom-icon";
-import {HomeProfileStyles as st} from "../../styles";
-import {UlText} from "../../../../components";
+import { HomeProfileStyles as st } from "../../styles";
+import { UlText } from "../../../../components";
 import * as Animatable from "react-native-animatable";
-import {IconCircleGradient, IconProfileCover} from "../../../../assets";
+import { RightIcon } from "../../../../assets";
 import VX from "../../../../plugins/vx";
 
 
@@ -16,7 +15,7 @@ export const ListCard = (props) => {
             animation="bounceInLeft"
             easing="ease-in-out"
             iterationCount="1"
-            delay={index*100}
+            delay={index * 100}
             style={[st.listCard, { backgroundColor: card.color }]}
         >
             <TouchableOpacity
@@ -39,14 +38,14 @@ export const ListCard = (props) => {
                         easing="ease-in-out"
                         iterationCount="infinite"
                         duration={1000}
-                        delay={index*400}
+                        delay={index * 400}
                         style={st.arrowIconWrapper}
                     >
                         <TouchableOpacity
                             style={st.arrowIconWrapper}
                             onPress={() => navigation.navigate(card.to)}
                         >
-                            <UlCustomIcon name={"fog-right"} color="#fff" size={16}/>
+                            <RightIcon color="#fff" size={16} />
                         </TouchableOpacity>
                     </Animatable.View>
                 </View>

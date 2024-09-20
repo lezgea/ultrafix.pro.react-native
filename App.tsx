@@ -142,7 +142,7 @@ const NavigationRoutes = () => {
                     tabBarLabel: "home-profile",
                     tabBarLabelStyle: { display: "none" },
                     tabBarIcon: ({ color }) => (
-                        <HomeIcon width={35} height={35} color={color} />
+                        <HomeIcon size={35} color={color} />
                     )
                 }}
             >
@@ -182,7 +182,7 @@ const NavigationRoutes = () => {
                     tabBarLabel: "Orders",
                     tabBarLabelStyle: { display: "none" },
                     tabBarIcon: ({ color }) => (
-                        <ProjectIcon width={35} height={35} color={color} />
+                        <ProjectIcon size={35} color={color} />
                     )
                 }}
             >
@@ -202,7 +202,7 @@ const NavigationRoutes = () => {
                     tabBarLabel: "Invoices",
                     tabBarLabelStyle: { display: "none" },
                     tabBarIcon: ({ color }) => (
-                        <FileIcon width={35} height={35} color={color} />
+                        <FileIcon size={35} color={color} />
                     )
                 }}
             >

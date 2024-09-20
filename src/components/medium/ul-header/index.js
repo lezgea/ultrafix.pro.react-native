@@ -1,10 +1,10 @@
 import { Text, TouchableOpacity, View, StyleSheet, Modal, Image } from "react-native";
 import React, { useState } from "react";
-import UlCustomIcon from "../../small/ul-custom-icon";
 import { UlBlueButton, UlText } from "../../small";
 import { Actionsheet, useDisclose } from "native-base";
 import variables from "../../../config/variables";
 import * as Animatable from "react-native-animatable";
+import { FilledEllipsisVerticalIcon, FilledMenuGridIcon, FilledMenuListIcon, LeftIcon, SearchIcon } from "@assets/icons";
 
 
 export const UlHeader = (props) => {
@@ -53,7 +53,7 @@ export const UlHeader = (props) => {
                     style={[st.switchBtn, color && { backgroundColor: "rgba(255,255,255,0.3)" }]}
                     onPress={() => navigation.goBack()}
                 >
-                    <UlCustomIcon name="fog-left-bold" size={20} color={color ? "#fff" : "#a9a9a9"} />
+                    <LeftIcon size={20} color={color ? "#fff" : "#a9a9a9"} />
                 </TouchableOpacity>
             }
             <View style={{ flex: 1, marginLeft: 15, marginBottom: 5 }}>
@@ -63,15 +63,15 @@ export const UlHeader = (props) => {
                 {
                     showFilterBtn &&
                     <TouchableOpacity style={st.switchBtn} onPress={onShowFilters}>
-                        <UlCustomIcon name="fog-filter-bold" size={20} color={"#a9a9a9"} />
+                        <SearchIcon size={20} color={"#a9a9a9"} />
                     </TouchableOpacity>
                 }
                 {
                     showSwitchViewBtn &&
                     <TouchableOpacity style={[st.switchBtn, { marginLeft: 10 }]} onPress={onSwitchView}>
                         {tabView
-                            ? <UlCustomIcon name="fog-menu-list-2-filled" size={20} color={"#a9a9a9"} />
-                            : <UlCustomIcon name="fog-menu-grid-filled" size={20} color={"#a9a9a9"} />
+                            ? <FilledMenuListIcon size={20} color={"#a9a9a9"} />
+                            : <FilledMenuGridIcon size={20} color={"#a9a9a9"} />
                         }
                     </TouchableOpacity>
                 }
@@ -80,7 +80,7 @@ export const UlHeader = (props) => {
                 !!actionSheet &&
                 <>
                     <TouchableOpacity style={{ marginBottom: 10 }} onPress={onOpen}>
-                        <UlCustomIcon name="fog-ellipsis-vertical-bold" size={18} color={"#fff"} />
+                        <FilledEllipsisVerticalIcon size={18} color={"#fff"} />
                     </TouchableOpacity>
                     <Actionsheet isOpen={isOpen} onClose={onClose} size="full">
                         <Actionsheet.Content>

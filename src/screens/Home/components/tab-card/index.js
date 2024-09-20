@@ -1,7 +1,7 @@
-import {Text, TouchableOpacity, View} from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 import React from "react";
-import UlCustomIcon from "../../../../components/small/ul-custom-icon";
-import {HomeProfileStyles as st} from "../../styles";
+import { HomeProfileStyles as st } from "../../styles";
+import { RightIcon } from "@assets/icons";
 
 
 
@@ -14,16 +14,16 @@ export const TabCard = (props) => {
             style={[st.tabCard, { backgroundColor: card.color }]}
             onPress={() => navigation.navigate(card.to)}
         >
-            <View style={{flex: 1}}>
-                <View style={{flex: 6, alignItems: 'center', justifyContent: "center"}}>
+            <View style={{ flex: 1 }}>
+                <View style={{ flex: 6, alignItems: 'center', justifyContent: "center" }}>
                     <Text style={st.tabLabel}>{card.label}</Text>
                 </View>
-                <View style={{flex: 1, alignItems: 'flex-end', justifyContent: 'center', paddingHorizontal: 20, paddingBottom: 10}}>
+                <View style={{ flex: 1, alignItems: 'flex-end', justifyContent: 'center', paddingHorizontal: 20, paddingBottom: 10 }}>
                     <TouchableOpacity
                         style={st.arrowIconWrapper}
                         onPress={() => navigation.navigate(card.to)}
                     >
-                        <UlCustomIcon name={"fog-right"} color="#fff" size={20}/>
+                        <RightIcon color="#fff" size={20} />
                     </TouchableOpacity>
                 </View>
             </View>

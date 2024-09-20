@@ -1,9 +1,8 @@
 import * as Animatable from "react-native-animatable";
 import {View, Dimensions} from "react-native";
 import React from "react";
-import UlCustomIcon from "../../small/ul-custom-icon";
 import {UlLoading} from "../../small";
-import {IconNoData} from "../../../assets";
+import {SpinnerIcon} from "../../../assets";
 import variables from "../../../config/variables";
 
 
@@ -23,7 +22,7 @@ export const UlContentLoader = (props) => {
                     iterationCount="infinite"
                     duration={800}
                 >
-                    <UlCustomIcon name="fog-spinner-2" size={50} color="#c4c4c4"/>
+                    <SpinnerIcon size={50} color="#c4c4c4" />
                 </Animatable.View>
             </View>
         )

@@ -1,7 +1,6 @@
 import { View, StyleSheet, ScrollView, TouchableOpacity, Keyboard, FlatList, Text } from "react-native";
 import React, { useReducer, useState } from "react";
 import { createOrder, getInvoiceInfo, getInvoiceTypes, getOrderInfo, onInvoiceUpdate, updateOrder } from "../../../../api";
-// import {orderReducer} from "../../actions";
 import { ORDER_INITIAL, ORDER_TIME_RANGES } from "../../../../constants";
 import { Box, Card, Center, Flex, FormControl, HStack } from "native-base";
 import moment from "moment";

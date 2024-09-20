@@ -1,12 +1,12 @@
-import {StyleSheet, Text, TouchableOpacity, View} from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
-import {CardSection} from "../card-section";
-import UlCustomIcon from "../../../../components/small/ul-custom-icon";
-import {UlText} from "../../../../components";
+import { CardSection } from "../card-section";
+import { UlText } from "../../../../components";
+import { RightIcon } from "@assets/icons";
 
 
 export const SummaryCard = (props) => {
-    let { data = [], label, navigation, index, buttonLabel, onButtonClick = () => {} } = props;
+    let { data = [], label, navigation, index, buttonLabel, onButtonClick = () => { } } = props;
 
     return (
         <View>
@@ -41,12 +41,12 @@ export const SummaryCard = (props) => {
                         }}
                         onPress={onButtonClick}
                     >
-                        <UlText style={{fontSize: 20, fontWeight: "500", color: "#fff"}}>{buttonLabel}</UlText>
+                        <UlText style={{ fontSize: 20, fontWeight: "500", color: "#fff" }}>{buttonLabel}</UlText>
                         <TouchableOpacity
                             style={st.arrowIconWrapper}
                             onPress={onButtonClick}
                         >
-                            <UlCustomIcon name={"fog-right"} color="#fff" size={20}/>
+                            <RightIcon color="#fff" size={20} />
                         </TouchableOpacity>
                     </TouchableOpacity>
                 }

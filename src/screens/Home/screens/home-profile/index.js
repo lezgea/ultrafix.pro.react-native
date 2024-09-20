@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
-import { IconArrowMoveTop, IconUser, IconProfileCover, IconCircleGradient, ProfileCoverIcon } from "../../../../assets";
+import { IconArrowMoveTop, IconUser, IconProfileCover, IconCircleGradient, ProfileCoverIcon, CircleGradientIcon, UserIcon, ArrowMoveTopIcon } from "../../../../assets";
 import { getInvoicesSummary, getLoggedUserInfo, getOrdersSummary, loadDashboardData } from "../../../../api";
 import { Spacer } from "native-base";
 import * as Animatable from "react-native-animatable";
@@ -225,7 +225,7 @@ export default function HomeProfileScreen({ navigation }) {
                             duration={4000}
                             style={st.userIconWrapper}
                         >
-                            <IconUser width={110} height={110} />
+                            <UserIcon size={110} />
                         </Animatable.View>
                         <Animatable.View
                             animation="bounceInRight"
@@ -257,7 +257,7 @@ export default function HomeProfileScreen({ navigation }) {
                             duration={20000}
                             style={{ position: "absolute", left: -50, top: -80, marginLeft: 5, height: 200, width: 250 }}
                         >
-                            <IconCircleGradient width={270} height={270} />
+                            <CircleGradientIcon size={270} />
                         </Animatable.View>
                         <View style={{ flexDirection: "row" }}>
                             <View style={{ flex: 1 }}>
@@ -387,7 +387,7 @@ export default function HomeProfileScreen({ navigation }) {
                         style={st.scrollBtn}
                         onPress={scrollToTop}
                     >
-                        <IconArrowMoveTop width={25} height={25} />
+                        <ArrowMoveTopIcon size={25} />
                     </TouchableOpacity>
                 }
             </UlContentLoader>

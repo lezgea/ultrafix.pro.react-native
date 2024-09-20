@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { TouchableOpacity, View } from "react-native";
 import { OrdersInfoStyles as st } from "../../styles";
 import { UlInfoLine, UlText } from "../../../../components";
-import UlCustomIcon from "../../../../components/small/ul-custom-icon";
 import * as Animatable from "react-native-animatable";
+import { DownIcon, UpIcon } from "@assets/icons";
 
 
 export const ServiceInfoCard = ({ info, label: { label } }) => {
@@ -20,7 +20,9 @@ export const ServiceInfoCard = ({ info, label: { label } }) => {
             <TouchableOpacity style={st.expandableBox} onPress={() => setExpand(!expand)}>
                 <UlText style={st.infoCardLabel}>Customer Info</UlText>
                 <TouchableOpacity style={st.expandBtn} onPress={() => setExpand(!expand)}>
-                    <UlCustomIcon name={`fog-${expand ? 'up' : 'down'}`} size={16} color={"#8c8c8c"} />
+                    {
+                        expand ? <UpIcon size={16} color={"#8c8c8c"} /> : <DownIcon size={16} color={"#8c8c8c"} />
+                    }
                 </TouchableOpacity>
             </TouchableOpacity>
             {

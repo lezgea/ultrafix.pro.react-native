@@ -5,9 +5,8 @@ import { getOrderInfo, getServices } from "../../../../api";
 import { OrdersInfoStyles as st } from "../../styles";
 import { UlBlueCircleButton, UlContentLoader, UlDeleteModal, UlHeader } from "../../../../components";
 import Appliances from "../../../../plugins/appliances";
-import { IconGoogleMap } from "../../../../assets";
+import { FilledCallIcon, GoogleMapIcon, IconGoogleMap } from "../../../../assets";
 import getDirections from "../../../../utils/google-map-directions";
-import { IconWhiteFilledCall } from "../../../../assets/icons/icon-white-filled-call";
 
 
 export default function OrdersInfoScreen({ route, navigation }) {
@@ -130,10 +129,10 @@ export default function OrdersInfoScreen({ route, navigation }) {
                 }}
             >
                 <TouchableOpacity style={st.mapBtn} onPress={handleGetDirections}>
-                    <IconGoogleMap height={35} width={45} />
+                    <GoogleMapIcon size={35} />
                 </TouchableOpacity>
                 <TouchableOpacity style={st.addBtn} onPress={onCall}>
-                    <IconWhiteFilledCall height={28} width={35} />
+                    <FilledCallIcon size={35} />
                 </TouchableOpacity>
             </View>
         </View>

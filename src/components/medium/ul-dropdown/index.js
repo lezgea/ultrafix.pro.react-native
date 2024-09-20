@@ -1,15 +1,15 @@
-import React, {useState} from 'react';
-import {View, TouchableOpacity} from "react-native";
-import {UlText} from "../../small";
-import UlCustomIcon from "../../small/ul-custom-icon";
+import React, { useState } from 'react';
+import { View, TouchableOpacity } from "react-native";
+import { UlText } from "../../small";
+import { FilledEllipsisVerticalIcon } from '@assets/icons';
 
 
 export const UlDropdown = (props) => {
-    let {options = [], children} = props;
+    let { options = [], children } = props;
     const [showDropdown, setShowDropdown] = useState(false)
 
     function getActionType(label) {
-        switch(label) {
+        switch (label) {
             case "Delete":
         }
     }
@@ -17,8 +17,8 @@ export const UlDropdown = (props) => {
 
     return (
         <View>
-            <TouchableOpacity style={{marginBottom: 10}} onPress={() => setShowDropdown(!showDropdown)}>
-                <UlCustomIcon name="fog-ellipsis-vertical-bold" size={18} color={"#fff"}/>
+            <TouchableOpacity style={{ marginBottom: 10 }} onPress={() => setShowDropdown(!showDropdown)}>
+                <FilledEllipsisVerticalIcon size={18} color={"#fff"} />
             </TouchableOpacity>
             {
                 showDropdown &&
@@ -37,12 +37,12 @@ export const UlDropdown = (props) => {
                     elevation: 20,
                     shadowColor: "#000000",
                 }}>
-                    <View style={{overflow: "hidden", borderRadius: 7,}}>
+                    <View style={{ overflow: "hidden", borderRadius: 7, }}>
                         {
                             options?.map((option, index) =>
                                 <UlOptionLine index={index}
-                                            label={option.label}
-                                            onPress={() => {option.action(); setShowDropdown(false)}}
+                                    label={option.label}
+                                    onPress={() => { option.action(); setShowDropdown(false) }}
                                 />
                             )
                         }
@@ -54,12 +54,12 @@ export const UlDropdown = (props) => {
 }
 
 
-const UlOptionLine = ({index, label, onPress}) => {
+const UlOptionLine = ({ index, label, onPress }) => {
     let icon = "fog-delete"
     let color = "#313131"
     let bg_color = "#fff"
 
-    switch(label) {
+    switch (label) {
         case "Delete":
             icon = "fog-delete";
             color = "#fff";
@@ -67,14 +67,14 @@ const UlOptionLine = ({index, label, onPress}) => {
         case "Edit": icon = "fog-edit"; break;
     }
 
-    return(
+    return (
         <TouchableOpacity
             key={index}
             onPress={onPress}
-            style={{flexDirection: "row", alignItems: "center", padding: 15, backgroundColor: bg_color}}
+            style={{ flexDirection: "row", alignItems: "center", padding: 15, backgroundColor: bg_color }}
         >
-            <UlCustomIcon name={icon} size={18} color={color}/>
-            <UlText style={{marginLeft: 10, fontSize: 18, color: color}}>{label}</UlText>
+            {/* <UlCustomIcon name={icon} size={18} color={color}/> */}
+            <UlText style={{ marginLeft: 10, fontSize: 18, color: color }}>{label}</UlText>
         </TouchableOpacity>
     )
 }

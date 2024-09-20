@@ -13,7 +13,7 @@ export const UlFormInput = (props) => {
                 {
                     textarea
                         ? <TextArea size="xl" h={h || 20} {...props} />
-                        : <Input size="xl" {...props} />
+                        : <Input size="xl" height="50px" pl="15px" borderRadius="10px" {...props} />
                 }
                 <FormControl.ErrorMessage leftIcon={<WarningOutlineIcon size="xs" />}>
                     Something went wrong
@@ -28,7 +28,7 @@ const st = StyleSheet.create({
     wrapper: {
         width: "100%",
         marginBottom: 10,
-        minHeight: 40,
+        minHeight: 50,
         // position: 'relative',
     },
     labelWrapper: {

@@ -9,8 +9,8 @@ import { signIn } from "../../actions";
 import Auth from "../../../../plugins/auth";
 import { ScrollView, VStack } from "native-base";
 import { UlBlueButton, UlDarkBlueButton, UlFormInput, UlText } from "../../../../components";
-import UlCustomIcon from "../../../../components/small/ul-custom-icon";
 import VX from '../../../../plugins/vx';
+import { EyeIcon, EyeOffIcon } from '@assets/icons';
 
 
 
@@ -58,8 +58,8 @@ export default function AuthLoginScreen(props) {
                 source={require("../../../../assets/img/ultrafix_main_logo.png")}
                 style={{ alignSelf: "center", marginTop: VX.screenHeight() / 10, maxHeight: VX.screenHeight() / 4.4, width: VX.screenHeight() / 4.5 }}
             />
-            <VStack space={2} alignItems="center">
-                <View style={{ width: "100%", height: 40, position: "relative", flexDirection: "row" }}>
+            <VStack space={5} alignItems="center">
+                <View style={{ width: "100%", height: 50, position: "relative", flexDirection: "row" }}>
                     <UlFormInput
                         size="2xl"
                         onChangeText={(text) => setState({ ...state, email: text })}
@@ -71,7 +71,7 @@ export default function AuthLoginScreen(props) {
                         autoComplete={true}
                     />
                 </View>
-                <View style={{ width: "100%", height: 40, position: "relative", flexDirection: "row" }}>
+                <View style={{ width: "100%", height: 50, position: "relative", flexDirection: "row" }}>
                     <UlFormInput
                         size="2xl"
                         value={state.password}
@@ -82,16 +82,16 @@ export default function AuthLoginScreen(props) {
                         secureTextEntry={hidePassword}
                         onChangeText={(text) => setState({ ...state, password: text })}
                     />
-                    <TouchableOpacity style={{ right: 0, top: -5, position: "absolute", height: 50, width: 50, alignItems: "center", justifyContent: 'center' }}
+                    <TouchableOpacity style={{ right: 0, position: "absolute", height: 50, width: 50, alignItems: "center", justifyContent: 'center' }}
                         onPress={() => setHidePassword(!hidePassword)}
                     >
-                        <UlCustomIcon name={hidePassword ? "fog-eye" : "fog-eye-off"} size={25} color={"#b4b4b4"} />
+                        {hidePassword ? <EyeIcon size={25} color="#b4b4b4" /> : <EyeOffIcon size={25} color={"#b4b4b4"} />}
                     </TouchableOpacity>
                 </View>
                 <UlDarkBlueButton
                     label={"Log In"}
                     loading={state.loading}
-                    style={{ marginBottom: 5, marginTop: 30 }}
+                    style={{ marginTop: 50 }}
                     onPress={onSignIn}
                 />
                 <UlBlueButton
@@ -99,7 +99,7 @@ export default function AuthLoginScreen(props) {
                     style={{ marginBottom: VX.screenHeight() / 12 }}
                     onPress={onApply}
                 />
-                <UlText style={{ fontSize: 16, marginBottom: -10, textAlign: "center", color: '#8c8c8c' }}>Make Appliances Great Again</UlText>
+                <UlText style={{ fontSize: 16, textAlign: "center", color: '#8c8c8c' }}>Make Appliances Great Again</UlText>
             </VStack>
         </ScrollView>
     );

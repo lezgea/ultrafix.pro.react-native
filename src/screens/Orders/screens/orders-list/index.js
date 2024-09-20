@@ -9,8 +9,8 @@ import {
 import getDirections from "../../../../utils/google-map-directions";
 import { getOrdersGeometry, getOrdersList } from "../../../../api";
 import { TabCard, ListCard } from "../../components";
-import { getLabel } from "../../actions";
-import { IconGoogleMap, IconArrowMoveTop, IconNoData } from "../../../../assets";
+import { getLabel } from "@screens/Orders/actions";
+import { IconGoogleMap, IconArrowMoveTop, IconNoData, ArrowMoveTopIcon } from "../../../../assets";
 import { Box, Card, Center, Flex, useToast } from "native-base";
 import { OrdersListStyles as st } from "../../styles";
 import DateLib from "../../../../plugins/date-lib";
@@ -206,7 +206,7 @@ export default function OrdersListScreen(props) {
                 {
                     scrollBtnVisible &&
                     <TouchableOpacity style={st.scrollBtn} onPress={scrollToTop}>
-                        <IconArrowMoveTop width={25} height={25} />
+                        <ArrowMoveTopIcon size={25} />
                     </TouchableOpacity>
                 }
                 {/*<TouchableOpacity style={st.addBtn} onPress={onCreateOrder}>*/}

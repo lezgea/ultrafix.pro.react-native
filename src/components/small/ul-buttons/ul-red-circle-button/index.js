@@ -1,6 +1,5 @@
 import React from 'react'
 import { StyleSheet, TouchableOpacity } from 'react-native'
-import UlCustomIcon from '../../ul-custom-icon'
 
 
 export const UlRedCircleButton = (props) => {
@@ -8,7 +7,7 @@ export const UlRedCircleButton = (props) => {
 
     return (
         <TouchableOpacity style={[st.buttonWrapper, { width: size, height: size }]} {...props}>
-            <UlCustomIcon name={icon} size={size / 2} color={"#fff"} />
+            {/* <UlCustomIcon name={icon} size={size / 2} color={"#fff"} /> */}
         </TouchableOpacity>
     )
 }

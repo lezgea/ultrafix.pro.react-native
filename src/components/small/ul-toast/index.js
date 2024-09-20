@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, StyleSheet } from "react-native";
 import { UlText } from "../ul-text";
-import UlCustomIcon from "../ul-custom-icon";
+import { ChecklistIcon } from '@assets/icons';
 
 
 export const UlToast = (props) => {
@@ -30,7 +30,7 @@ const SuccessToast = (props) => {
                 <UlText style={st.text}>{message}</UlText>
             </View>
             <View style={st.iconWrapper}>
-                <UlCustomIcon name="fog-checklist-bold" color={"rgba(255,255,255,0.8)"} size={26} />
+                <ChecklistIcon color={"rgba(255,255,255,0.8)"} size={26} />
             </View>
         </View>
     )
@@ -47,7 +47,7 @@ const ErrorToast = (props) => {
                 <UlText style={st.text}>{message}</UlText>
             </View>
             <View style={st.iconWrapper}>
-                <UlCustomIcon name="fog-circle-info-bold" color={"rgba(255,255,255,0.8)"} size={26} />
+                {/* <UlCustomIcon name="fog-circle-info-bold" color={"rgba(255,255,255,0.8)"} size={26} /> */}
             </View>
         </View>
     )
@@ -64,7 +64,7 @@ const WarningToast = (props) => {
                 <UlText style={st.text}>{message}</UlText>
             </View>
             <View style={st.iconWrapper}>
-                <UlCustomIcon name="fog-circle-info-bold" color={"rgba(255,255,255,0.8)"} size={26} />
+                {/* <UlCustomIcon name="fog-circle-info-bold" color={"rgba(255,255,255,0.8)"} size={26} /> */}
             </View>
         </View>
     )

@@ -4,7 +4,7 @@ import { UlHeader, UlContentLoader, UlText, UlInfoLine, UlDarkBlueButton, UlGree
 import { getInvoiceInfo } from "../../../../api";
 import { IconBlueCheck, IconGrayCheck } from "../../../../assets";
 import PriceC from "../../../../plugins/price-c";
-import { getLabelColor } from "../../../../actions";
+import { getLabelColor } from "@utils/get-label-color";
 import { ReportsInfoStyles as st } from "../../styles";
 import moment from "moment/moment";
 import { useToast } from "react-native-toast-notifications";

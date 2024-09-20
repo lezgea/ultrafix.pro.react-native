@@ -1,16 +1,16 @@
-import {Text, TouchableOpacity, View, StyleSheet} from "react-native";
+import { Text, TouchableOpacity, View, StyleSheet } from "react-native";
 import React from "react";
 import * as Animatable from "react-native-animatable";
-import UlCustomIcon from "../../ul-custom-icon";
-import {UlText} from "../../ul-text";
+import { UlText } from "../../ul-text";
+import { SpinnerIcon } from "@assets/icons";
 
 
 export const UlBorderedButton = (props) => {
-    let {label, icon, loading, onPress} = props;
+    let { label, icon, loading, onPress } = props;
 
-    return(
+    return (
         <TouchableOpacity
-            style={[st.btnContainer, {...props.style}]}
+            style={[st.btnContainer, { ...props.style }]}
             onPress={onPress}
         >
             {
@@ -21,15 +21,15 @@ export const UlBorderedButton = (props) => {
                         iterationCount="infinite"
                         duration={800}
                     >
-                        <UlCustomIcon name="fog-spinner-2" size={25} color={"rgba(255,255,255,0.54)"}/>
+                        <SpinnerIcon size={25} color={"rgba(255,255,255,0.54)"} />
                     </Animatable.View>
                     :
-                    <View style={{flexDirection: "row", alignItems: "center"}}>
+                    <View style={{ flexDirection: "row", alignItems: "center" }}>
                         {
-                            icon &&
-                            <View style={st.arrowIconWrapper}>
-                                <UlCustomIcon name={icon} color={"#2267b7"} size={16}/>
-                            </View>
+                            // icon &&
+                            // <View style={st.arrowIconWrapper}>
+                            //     <UlCustomIcon name={icon} color={"#2267b7"} size={16}/>
+                            // </View>
                         }
                         <UlText style={st.btnLabel}>{label}</UlText>
                     </View>
@@ -48,7 +48,7 @@ const st = StyleSheet.create({
         borderRadius: 5,
         paddingHorizontal: 16,
         paddingVertical: 7,
-        borderWidth:1,
+        borderWidth: 1,
         borderColor: '#2267b7'
     },
     btnLabel: {
