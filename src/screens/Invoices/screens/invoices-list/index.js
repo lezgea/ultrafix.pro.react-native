@@ -1,6 +1,5 @@
 import React from "react";
 import { FlatList, TouchableOpacity, View, SafeAreaView } from "react-native";
-import { IconArrowMoveTop } from "../../../../assets";
 import { getInvoicesList } from "../../../../api";
 import { ListCard } from "../../components";
 import { getLabel } from "@screens/Invoices/actions";
@@ -15,6 +14,7 @@ import {
 import { InvoicesListStyles as st } from "../../styles";
 import DateLib from "../../../../plugins/date-lib";
 import VX from "../../../../plugins/vx";
+import { ArrowMoveTopIcon } from "@assets/icons";
 
 
 
@@ -119,7 +119,7 @@ export default function InvoicesListScreen({ navigation }) {
                             style={st.scrollBtn}
                             onPress={scrollToTop}
                         >
-                            <IconArrowMoveTop width={25} height={25} />
+                            <ArrowMoveTopIcon size={25} />
                         </TouchableOpacity>
                     }
                 </SafeAreaView>
